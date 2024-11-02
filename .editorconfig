@@ -1,0 +1,4 @@
+root = true
+
+[**/test/**/*.{kt,kts}]
+ktlint_standard_function-naming = disabled

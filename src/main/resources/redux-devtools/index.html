@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redux DevTools</title>
+    <style>
+      body {
+        position: fixed;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #root {
+        height: 100%;
+      }
+      #root > div {
+        height: 100%;
+      }
+    </style>
+    <link href="redux-devtools-app.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="react.production.min.js"></script>
+    <script src="react-dom.production.min.js"></script>
+    <script src="redux-devtools-app.min.js"></script>
+    <script src="port.js"></script>
+    <script>
+      const container = document.querySelector('#root');
+      const element = React.createElement(ReduxDevToolsApp.Root, {
+        socketOptions: {
+          hostname: 'localhost',
+          port: '8001',
+          autoReconnect: true,
+        },
+      });
+      ReactDOM.createRoot(container).render(element);
+    </script>
+  </body>
+</html>
