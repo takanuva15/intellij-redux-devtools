@@ -117,7 +117,7 @@ jobs:
 
       # Run tests
       - name: Run Tests
-        run: ./gradlew check
+        run: xvfb-run ./gradlew check
 
       # Collect Tests Result of failed tests
       - name: Collect Tests Result
@@ -132,6 +132,7 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           files: ${{ github.workspace }}/build/reports/kover/report.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   # Run Qodana inspections and provide report
   inspectCode:
