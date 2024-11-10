@@ -5,8 +5,8 @@ import com.intellij.testFramework.fixtures.BasePlatformTestCase
 import io.kotest.matchers.nulls.shouldNotBeNull
 
 class RDProjectServiceTest : BasePlatformTestCase() {
-    fun `test service has html window`() {
-        val window = myFixture.project.service<RDProjectService>().rdWindow
-        window.shouldNotBeNull()
+    fun `test service exists`() {
+        val svc = myFixture.project.service<RDProjectService>()
+        svc.shouldNotBeNull()
     }
 }

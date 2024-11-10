@@ -1,6 +1,5 @@
 package com.github.takanuva15.intellijreduxdevtools.ui
 
-import com.intellij.openapi.project.DefaultProjectFactory
 import com.intellij.testFramework.TestApplicationManager
 import com.intellij.ui.jcef.JBCefClient
 import com.intellij.ui.jcef.executeJavaScript
@@ -20,7 +19,7 @@ class RDPanelTest {
 
     @Test
     fun `test rd tool window activates`() {
-        val panel = RDPanel(DefaultProjectFactory.getInstance().defaultProject)
+        val panel = RDPanel()
         panel.jbCefClient.setProperty(JBCefClient.Properties.JS_QUERY_POOL_SIZE, 1)
         JBCefTestHelper.invokeAndWaitForLoad(panel) {
             panel.createImmediately()

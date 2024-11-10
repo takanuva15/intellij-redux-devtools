@@ -3,7 +3,8 @@
 # intellij-redux-devtools Changelog
 
 ## [Unreleased]
-### Added
+### Fixed
+- Adjusted untilBuild to be infinite
 
 ## [1.0.0] - 2024-11-03
 ### Added

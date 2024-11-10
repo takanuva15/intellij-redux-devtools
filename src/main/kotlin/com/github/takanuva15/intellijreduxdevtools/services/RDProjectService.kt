@@ -10,7 +10,7 @@ import com.intellij.openapi.project.Project
 class RDProjectService(
     project: Project,
 ) {
-    val rdWindow = RDPanel(project)
+    val rdWindow by lazy { RDPanel() }
 
     init {
         thisLogger().info(RDBundle.message("projectService", project.name))
