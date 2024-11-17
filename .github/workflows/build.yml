@@ -115,6 +115,10 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      # Run ktlint
+      - name: Run KtLinter
+        run: ./gradlew ktlintCheck
+
       # Run tests
       - name: Run Tests
         run: xvfb-run ./gradlew check
@@ -129,7 +133,7 @@ jobs:
 
       # Upload the Kover report to CodeCov
       - name: Upload Code Coverage Report
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           files: ${{ github.workspace }}/build/reports/kover/report.xml
           token: ${{ secrets.CODECOV_TOKEN }}

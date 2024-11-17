@@ -9,14 +9,14 @@ private const val BUNDLE = "messages.RDBundle"
 
 object RDBundle : DynamicBundle(BUNDLE) {
     @JvmStatic
-    fun message(
+    fun msg(
         @PropertyKey(resourceBundle = BUNDLE) key: String,
         vararg params: Any,
     ) = getMessage(key, *params)
 
     @Suppress("unused")
     @JvmStatic
-    fun messagePointer(
+    fun msgPtr(
         @PropertyKey(resourceBundle = BUNDLE) key: String,
         vararg params: Any,
     ) = getLazyMessage(key, *params)

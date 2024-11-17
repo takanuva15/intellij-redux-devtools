@@ -9,10 +9,12 @@ import org.cef.callback.CefSchemeHandlerFactory
 import org.cef.handler.CefResourceHandler
 import org.cef.network.CefRequest
 
+const val RD_HOMEPAGE = "http://redux-devtools/index.html"
+
 class RDPanel : JCEFHtmlPanel(isOffScreenRendering(), null, null) {
     init {
         CefApp.getInstance().registerSchemeHandlerFactory("http", "redux-devtools", LocalFileSchemeHandlerFactory())
-        loadURL("http://redux-devtools/index.html")
+        loadURL(RD_HOMEPAGE)
     }
 
     companion object {

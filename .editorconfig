@@ -2,3 +2,6 @@ root = true
 
 [**/test/**/*.{kt,kts}]
 ktlint_standard_function-naming = disabled
+
+[*.properties]
+max_line_length = off

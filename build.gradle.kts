@@ -35,6 +35,7 @@ repositories {
 dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.bundles.kotest)
+    testImplementation(libs.mockk)
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
     intellijPlatform {
@@ -158,6 +159,13 @@ tasks {
 
     publishPlugin {
         dependsOn(patchChangelog)
+    }
+
+    test {
+        jvmArgs(
+            "--add-opens",
+            "jcef/org.cef.browser=ALL-UNNAMED",
+        )
     }
 }
 

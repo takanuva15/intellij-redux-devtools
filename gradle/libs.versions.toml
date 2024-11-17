@@ -2,6 +2,7 @@
 # libraries
 junit = "4.13.2"
 kotest = "5.+"
+mockk = "1.13.+"
 
 # plugins
 changelog = "2.2.1"
@@ -16,6 +17,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 kotest-runner = { group = "io.kotest", name = "kotest-runner-junit5", version.ref = "kotest" }
 kotest-assertions = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
 kotest-datatest = { group = "io.kotest", name = "kotest-framework-datatest", version.ref = "kotest" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 
 [bundles]
 kotest = ["kotest-runner", "kotest-assertions", "kotest-datatest"]
