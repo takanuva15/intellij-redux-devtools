@@ -1,6 +1,7 @@
 ![Build](https://github.com/takanuva15/intellij-redux-devtools/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/25743-redux-devtools.svg)](https://plugins.jetbrains.com/plugin/25743-redux-devtools)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/25743-redux-devtools.svg)](https://plugins.jetbrains.com/plugin/25743-redux-devtools)
+[![codecov](https://codecov.io/gh/takanuva15/intellij-redux-devtools/graph/badge.svg?token=PU6DC2N3CI)](https://codecov.io/gh/takanuva15/intellij-redux-devtools)
 
 <h1 align="center">IntelliJ Redux DevTools</h1>
 
@@ -25,8 +26,6 @@ A simple plugin to integrate Redux Devtools into IntelliJ IDEs.
 Unlike the [Redux DevTools chrome extension](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd), this plugin will not have access to inspect the Redux Store running in your app by default.
 To enable access, you need to run a remote devtools server that the plugin can use to connect to the store via middleware:
 
-> Note: If you're viewing this on Jetbrains Marketplace, the instructions below may not render some special characters correctly. Please review the [README](https://github.com/takanuva15/intellij-redux-devtools/tree/main#usage) directly in that case.
-
 1. Install the official redux devtools cli and remote server: `npm i -D @redux-devtools/cli @redux-devtools/remote`
 2. Add an npm script for running the remote server: `"start-redux-devtools": "redux-devtools --hostname=localhost --port=8001"`
 3. Modify your store to add a middleware that the remote server can connect to:
@@ -43,7 +42,8 @@ export const store = configureStore({
 6. Trigger some actions from your app server and you should see it update within the tool window.
 
 Notes: 
-- See this [SO question](https://stackoverflow.com/q/51003226/6854489) for additional configuration details.
+- See this [SO question](https://stackoverflow.com/q/51003226/6854489) for more general configuration details.
+- See this [article](https://medium.com/@jonnyburger/how-to-get-redux-devtools-working-on-a-physical-device-in-react-native-bf5692a1e9a5) for more details regarding React Native.
 - You can change the DevTools UI theme from the "Settings" tab.
 - Certain DevTools functionality is not possible from the IDE, such as "Export to file". In such cases, add the `--open` flag to the `redux-devtools` script above and rerun it to launch the official remote client instead to achieve your task.  
 
@@ -74,10 +74,9 @@ Notes:
 ### Prerequisites
 * IntelliJ IDEA 2023.* or newer (Community Edition is fine)  
   Required plugins (for development only):
-  - [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit)
-  - [PsiViewer](https://plugins.jetbrains.com/plugin/227-psiviewer)
   - [Kotest](https://plugins.jetbrains.com/plugin/14080-kotest)
   - [Ktlint](https://plugins.jetbrains.com/plugin/15057-ktlint-unofficial-)
+  - [Plugin DevKit](https://plugins.jetbrains.com/plugin/22851-plugin-devkit)
 * Java 17
 
 ### Running Locally

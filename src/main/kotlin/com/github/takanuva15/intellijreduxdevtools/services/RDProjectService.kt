@@ -13,6 +13,6 @@ class RDProjectService(
     val rdWindow by lazy { RDPanel() }
 
     init {
-        thisLogger().info(RDBundle.message("projectService", project.name))
+        thisLogger().info(RDBundle.msg("projectService", project.name))
     }
 }

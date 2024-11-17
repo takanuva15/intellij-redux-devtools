@@ -5,6 +5,10 @@
 ## [Unreleased]
 ### Added
 
+## [1.1.0] - 2024-11-17
+### Added
+- Added toolbar with basic help and refresh actions
+
 ## [1.0.1] - 2024-11-10
 ### Fixed
 - Adjusted untilBuild to be infinite

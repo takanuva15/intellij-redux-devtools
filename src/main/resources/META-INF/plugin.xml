@@ -13,11 +13,27 @@
                     factoryClass="com.github.takanuva15.intellijreduxdevtools.toolwindow.RDToolWindowFactory"
                     icon="com.github.takanuva15.intellijreduxdevtools.icons.RDIcons.rdToolWindow"/>
         <projectService
-                serviceImplementation="com.github.takanuva15.intellijreduxdevtools.services.RDProjectService" id="ReduxDevToolsProjectService"/>
-        <projectService
-                serviceImplementation="com.github.takanuva15.intellijreduxdevtools.services.RDPluginDisposable"
-                id="ReduxDevToolsPluginDisposable"/>
+                serviceImplementation="com.github.takanuva15.intellijreduxdevtools.services.RDProjectService"
+                id="ReduxDevToolsProjectService"/>
         <registryKey defaultValue="false" key="ide.browser.jcef.redux-devtools.osr.enabled"
                      description="Enables off-screen rendering for Redux DevTools"/>
+        <registryKey defaultValue="false" key="com.github.takanuva15.intellijreduxdevtools.showjcefdevtools"
+                     description="Enables the JCEF DevTools button for Redux DevTools"/>
     </extensions>
+
+    <actions>
+        <action id="intellijreduxdevtools.ShowHelpAction"
+                class="com.github.takanuva15.intellijreduxdevtools.actions.ShowHelpAction"/>
+        <action id="intellijreduxdevtools.ReloadRDPanelAction"
+                class="com.github.takanuva15.intellijreduxdevtools.actions.ReloadRDPanelAction"/>
+        <action id="intellijreduxdevtools.OpenDevToolsAction"
+                class="com.github.takanuva15.intellijreduxdevtools.actions.OpenDevToolsAction"/>
+
+        <group id="intellijreduxdevtools.RDPanelToolbarActionGroup">
+            <reference ref="intellijreduxdevtools.ShowHelpAction"/>
+            <reference ref="intellijreduxdevtools.ReloadRDPanelAction"/>
+            <separator/>
+            <reference ref="intellijreduxdevtools.OpenDevToolsAction"/>
+        </group>
+    </actions>
 </idea-plugin>
